@@ -34,7 +34,7 @@ import sys
 
 
 K.clear_session()
-root = '/home/matijamasaibb/codematijamasa/CSRNet-keras/data/ShanghaiA'
+root = '/home/matijamasaibb/codesmatijamasa/CSRNet-keras/data/ShanghaiA'
 
 
 # In[19]:
