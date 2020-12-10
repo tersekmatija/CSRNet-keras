@@ -321,10 +321,10 @@ model.compile(optimizer=sgd, loss=euclidean_distance_loss, metrics=['mse'])
 # In[34]:
 
 
-earlyStop = tf.keras.callbacks.EarlyStopping(monitor = "loss", patience = 5, mode = "min")
-#modelSave = tf.keras.callbacks.ModelCheckpoint("model/weights.{epoch:03d}.h5", save_best_only = True, monitor = "mse", mode = "min")
+earlyStop = tf.keras.callbacks.EarlyStopping(monitor = "loss", patience = 10, mode = "min")
+modelSave = tf.keras.callbacks.ModelCheckpoint("models/weights.{epoch:03d}.h5", save_best_only = True, monitor = "mean_squared_error", mode = "min")
 
-model.fit_generator(train_gen, epochs=500, steps_per_epoch= 700 , verbose=1, callbacks = [earlyStop])
+model.fit_generator(train_gen, epochs=999, steps_per_epoch= 700 , verbose=1, callbacks = [earlyStop, modelSave])
 
 
 # In[ ]:
